@@ -1,9 +1,9 @@
-#include <kent_engine/engine.h>
+#include <kent/engine.h>
 #include <iostream>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
-#include "kent_engine/service_locator.h"
+#include "kent/service_locator.h"
 #include "platform/glfw_window.h"
 
 namespace Kent

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <kent_engine/platform/window.h>
+#include <kent/platform/window.h>
 #include <GLFW/glfw3.h>
 
 namespace Kent {

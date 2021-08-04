@@ -1,4 +1,4 @@
-#include <kent_engine/platform/application.h>
+#include <kent/platform/application.h>
 
 namespace Kent {
     Application::Application(std::string title)

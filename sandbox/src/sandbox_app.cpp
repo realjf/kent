@@ -1,5 +1,5 @@
-#include <kent_engine/platform/entry_point.h>
-#include <kent_engine/platform/application.h>
+#include <kent/platform/entry_point.h>
+#include <kent/platform/application.h>
 
 class Sandbox : public Kent::Application {
 public:
