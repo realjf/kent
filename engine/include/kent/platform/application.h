@@ -1,22 +1,30 @@
 #pragma once
 
+#include <kent/platform/reference.h>
+#include <kent/platform/window.h>
 #include <string>
+
+
 
 namespace Kent {
 
     class Application {
     public:
-        Application() = default;
-        Application(std::string title);
+        Application(const std::string& title = "Kent App");
         virtual ~Application() = default;
 
         void Run();
+        void Close();
+
+        inline Window& GetWindow() { return *m_Window; }
+
     private:
-        void Init();
-        void Shutdown();
 
     private:
         std::string m_Title;
+        Scope<Window> m_Window;
+
+        bool m_Running = true;
     };
 
     extern Application* CreateApplication();
