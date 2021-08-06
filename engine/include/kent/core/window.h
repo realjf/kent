@@ -1,10 +1,16 @@
 #pragma once
 
 #include <kent/core/reference.h>
+#include <GLFW/glfw3.h>
+
 #include <string>
+#include <tuple>
+
 
 namespace Kent {
 
+    
+    
     struct WindowProps
     {
         uint32_t Width, Height;
@@ -25,8 +31,11 @@ namespace Kent {
         static Scope<Window> CreateWindow(const WindowProps& props);
         virtual uint32_t GetWidth() const = 0;
         virtual uint32_t GetHeight() const = 0;
+        virtual GLFWwindow* GetWindow() = 0;
 
+        virtual std::pair<int, int> GetWindowExtents() = 0;
+        
     private:
-
+        
     };
 }

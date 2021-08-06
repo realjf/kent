@@ -4,3 +4,6 @@
 [submodule "engine/external/glfw"]
 	path = engine/external/glfw
 	url = https://github.com/glfw/glfw
+[submodule "engine/external/vk-bootstrap"]
+	path = engine/external/vk-bootstrap
+	url = https://github.com/charles-lunarg/vk-bootstrap
