@@ -1,4 +1,4 @@
-#include <kent/platform/entry_point.h>
+#include <kent/core/entry_point.h>
 #include <kent/engine.h>
 
 class Sandbox : public Kent::Application {

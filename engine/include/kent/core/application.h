@@ -1,7 +1,8 @@
 #pragma once
 
-#include <kent/platform/reference.h>
-#include <kent/platform/window.h>
+#include <kent/core/reference.h>
+#include <kent/core/window.h>
+#include <kent/renderer/renderer.h>
 #include <string>
 
 
@@ -18,11 +19,14 @@ namespace Kent {
 
         inline Window& GetWindow() { return *m_Window; }
 
+        inline Renderer& GetRenderer() { return *m_Renderer; }
+
     private:
 
     private:
         std::string m_Title;
         Scope<Window> m_Window;
+        Scope<Renderer> m_Renderer;
 
         bool m_Running = true;
     };

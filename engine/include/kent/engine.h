@@ -1,6 +1,6 @@
 #pragma once
 
-#include <kent/platform/application.h>
+#include <kent/core/application.h>
 
 
 namespace Kent

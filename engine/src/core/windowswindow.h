@@ -1,7 +1,10 @@
 #pragma once
 
-#include <kent/platform/window.h>
+#define GLFW_INCLUDE_VULKAN
+
+#include <kent/core/window.h>
 #include <GLFW/glfw3.h>
+#include <Vulkan/Vulkan.h>
 
 namespace Kent {
 

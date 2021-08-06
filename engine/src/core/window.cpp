@@ -1,4 +1,4 @@
-#include <kent/platform/window.h>
+#include <kent/core/window.h>
 #include "windowswindow.h"
 
 namespace Kent {

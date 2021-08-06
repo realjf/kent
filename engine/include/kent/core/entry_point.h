@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <kent/engine.h>
-#include <kent/platform/application.h>
+#include <kent/core/application.h>
 
 
 int main(int argc, char** argv) {
