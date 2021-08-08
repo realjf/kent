@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vulkan/vulkan.h>
+#include <string>
 
 #define VK_CHECK(x) \
     do { \
@@ -14,7 +16,8 @@ namespace Kent {
 
     class VulkanUtilities
     {
-
+    public:
+        static bool LoadShaderModule(const std::string& filePath, VkDevice device, VkShaderModule &outShaderModule);
     };
 
 }

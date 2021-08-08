@@ -20,8 +20,8 @@ target_include_directories(${PROJECT_NAME}
         glm
         glfw
         ${Vulkan_INCLUDE_DIRS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/src 
         vk-bootstrap
 )
 
@@ -33,3 +33,23 @@ target_link_libraries(${PROJECT_NAME}
     PRIVATE    
         vk-bootstrap
 )
+
+
+file (GLOB SHADERS shaders/*.frag shaders/*.vert)
+
+
+add_custom_command(TARGET ${PROJECT_NAME} 
+    PRE_BUILD 
+    COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}/sandbox/shaders" "${CMAKE_BINARY_DIR}/editor/shaders"
+    )
+
+foreach(shader ${SHADERS})
+    get_filename_component(SHADER_NAME ${shader} NAME)
+    add_custom_command(TARGET ${PROJECT_NAME}
+     PRE_BUILD  
+     COMMAND glslc.exe -c ${shader} -o "${CMAKE_BINARY_DIR}/sandbox/shaders/${SHADER_NAME}.spv")
+    add_custom_command(TARGET ${PROJECT_NAME}
+     PRE_BUILD  
+     COMMAND glslc.exe -c ${shader} -o "${CMAKE_BINARY_DIR}/editor/shaders/${SHADER_NAME}.spv")
+endforeach()
+

@@ -14,14 +14,15 @@ namespace Kent {
         RendererSettings settings = {
             .ApplicationName = m_Title,
         };
-        m_Renderer->Init(settings, m_Window->GetWindow());
         auto [width, height] = m_Window->GetWindowExtents();
-        m_Renderer->CreateSwapchain(width, height);
+        m_Renderer->Init(settings, m_Window->GetWindow(), width, height);
+        
 
         while(m_Running)
         {
             if(!m_Window->OnUpdate())
             {
+                m_Renderer->Shutdown();
                 Close();
             }
 
@@ -35,6 +36,8 @@ namespace Kent {
     {
         m_Window.reset();
         m_Window = nullptr;
+        m_Renderer.reset();
+        m_Renderer = nullptr;
         m_Running = false;
     }
 }

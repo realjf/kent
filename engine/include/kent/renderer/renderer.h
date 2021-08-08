@@ -21,7 +21,7 @@ namespace Kent {
 
     class Renderer {
     public:
-        virtual void Init(RendererSettings settings, GLFWwindow* window) = 0;
+        virtual void Init(RendererSettings settings, GLFWwindow* window, int width, int height) = 0;
         virtual void Shutdown() = 0;
         virtual void RenderFrame() = 0;
 
@@ -29,7 +29,6 @@ namespace Kent {
 
         virtual void DrawSurface(std::unordered_map<SurfaceArgs, std::any> args, GLFWwindow* window) = 0;
 
-        virtual void CreateSwapchain(int width, int height) = 0;
     private:
 
     };
